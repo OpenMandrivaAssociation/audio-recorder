@@ -1,0 +1,50 @@
+Index: audio-recorder/data/audio-recorder.desktop
+===================================================================
+--- audio-recorder.orig/data/audio-recorder.desktop
++++ audio-recorder/data/audio-recorder.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ GenericName=Audio Recorder
+-Categories=GNOME;AudioVideo;Recorder
++Categories=GNOME;AudioVideo;Recorder;
+ Exec=audio-recorder
+ Icon=audio-recorder
+ StartupNotify=true
+@@ -49,37 +49,3 @@ Comment[sr]=Audio Recorder
+ Comment[tr]=Ses Kaydedici
+ Comment[uk]=Легкий в застосуванні інструмент для аудіо запису
+ Comment[vi]=Trình ghi âm
+-
+-# Right-click menu items for Unity's launcher icon.
+-# Ref: https://wiki.ubuntu.com/Unity/LauncherAPI
+-X-Ayatana-Desktop-Shortcuts=StartRecording;StopRecording;PauseRecording;ShowWindow
+-
+-[StartRecording Shortcut Group]
+-Name=Start
+-Name[fi_FI]=Aloita
+-Name[nb_NO]=Start
+-Exec=audio-recorder --command=start
+-TargetEnvironment=Unity
+-
+-[StopRecording Shortcut Group]
+-Name=Stop
+-Name[fi_FI]=Lopeta
+-Name[nb_NO]=Stopp
+-Exec=audio-recorder --command=stop
+-TargetEnvironment=Unity
+-
+-[PauseRecording Shortcut Group]
+-Name=Pause
+-Name[fi_FI]=Keskeytä väliaikaisesti
+-Name[nb_NO]=Pause
+-Exec=audio-recorder --command=pause
+-TargetEnvironment=Unity
+-
+-[ShowWindow Shortcut Group]
+-Name=Show window
+-Name[fi_FI]=Näytä ikkuna
+-Name[nb_NO]=Vis applikasjon
+-Exec=audio-recorder --command=show
+-TargetEnvironment=Unity
+-
+-
