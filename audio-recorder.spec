@@ -9,6 +9,7 @@ Group:		Sound
 Url:		https://launchpad.net/audio-recorder
 Source0:	https://launchpad.net/audio-recorder/trunk/version%{version}-1/+download/%{name}-%{version}-1.tar.gz
 Patch0:		audio-recorder-correct-desktop-menu.patch
+BuildRequires:	intltool
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(dconf)
