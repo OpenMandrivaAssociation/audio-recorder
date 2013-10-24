@@ -3,7 +3,7 @@
 Summary:	Audio recorder for the GNOME
 Name:		audio-recorder
 Version:	1.3
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Sound
 Url:		https://launchpad.net/audio-recorder
@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig(libpulse)
 Requires:	gstreamer%{gstapi}-plugins-bad
 Requires:	gstreamer%{gstapi}-plugins-base
 Requires:	gstreamer%{gstapi}-plugins-good
-Requires:	gstreamer%{gstapi}-plugins-ugly
+Suggests:	gstreamer%{gstapi}-plugins-ugly
 
 %description
 Audio-recorder allows you to record your favourite music or audio to
