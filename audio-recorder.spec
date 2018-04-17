@@ -2,8 +2,8 @@
 
 Summary:	Audio recorder for the GNOME
 Name:		audio-recorder
-Version:	1.3
-Release:	7
+Version:	2.0.2
+Release:	1
 License:	GPLv3+
 Group:		Sound
 Url:		https://launchpad.net/audio-recorder
