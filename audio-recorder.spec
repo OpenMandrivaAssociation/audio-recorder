@@ -36,9 +36,11 @@ your loudspeakers you can record it.
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/
-%{_iconsdir}/hicolor/*/apps/*.png
+#{_iconsdir}/hicolor/*/apps/*.png
+%{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/%{name}/
 %{_datadir}/glib-2.0/schemas/org.gnome.audio-recorder.gschema.xml
+%{_mandir}/man1/%{name}.1*
 
 #----------------------------------------------------------------------------
 
