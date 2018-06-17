@@ -40,7 +40,7 @@ your loudspeakers you can record it.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}
+%setup -qn %{name}-%{version}
 %patch0 -p1
 
 %build
