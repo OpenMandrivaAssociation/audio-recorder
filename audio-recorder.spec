@@ -8,7 +8,7 @@ License:	GPLv3+
 Group:		Sound
 Url:		https://launchpad.net/audio-recorder
 Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.orig.tar.xz
-Patch0:		audio-recorder-correct-desktop-menu.patch
+#Patch0:		audio-recorder-correct-desktop-menu.patch
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(dbus-glib-1)
@@ -41,7 +41,7 @@ your loudspeakers you can record it.
 
 %prep
 %setup -qn %{name}-%{version}
-%patch0 -p1
+#patch0 -p1
 
 %build
 %configure2_5x
