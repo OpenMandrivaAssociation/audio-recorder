@@ -10,6 +10,7 @@ Url:		https://launchpad.net/audio-recorder
 Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.orig.tar.xz
 #Patch0:		audio-recorder-correct-desktop-menu.patch
 BuildRequires:	intltool
+BuildRequires:  gstpbutils1.0_0
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(dconf)
