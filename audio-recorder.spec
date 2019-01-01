@@ -2,13 +2,13 @@
 
 Summary:	Audio recorder for the GNOME
 Name:		audio-recorder
-Version:	2.0.2
+Version:	2.2.3
 Release:	1
 License:	GPLv3+
 Group:		Sound
 Url:		https://launchpad.net/audio-recorder
-#Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.orig.tar.xz
-Source0:  %{name}-%{version}.orig.tar.xz
+Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.xz
+#Source0:  %{name}-%{version}.orig.tar.xz
 #Patch0:		audio-recorder-correct-desktop-menu.patch
 BuildRequires:	intltool
 #BuildRequires:  gstpbutils1.0_0
