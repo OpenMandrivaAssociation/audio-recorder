@@ -1,15 +1,15 @@
 %define gstapi 1.0
+%define ubuntuversion jammy
 
 Summary:	Audio recorder for the GNOME
 Name:		audio-recorder
-Version:	2.2.3
+Version:	3.3.4
 Release:	1
 License:	GPLv3+
 Group:		Sound
 Url:		https://launchpad.net/audio-recorder
-Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.xz
-#Source0:  %{name}-%{version}.orig.tar.xz
-#Patch0:		audio-recorder-correct-desktop-menu.patch
+#Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.xz
+Source0:  %{url}/+archive/ubuntu/ppa/+sourcefiles/audio-recorder/%{version}~%{ubuntuversion}/audio-recorder_%{version}~%{ubuntuversion}.tar.gz
 BuildRequires:	intltool
 #BuildRequires:  gstpbutils1.0_0
 BuildRequires:	pkgconfig(dbus-1)
@@ -24,7 +24,7 @@ BuildRequires:  pkgconfig(appindicator3-0.1)
 Requires:	gstreamer%{gstapi}-plugins-bad
 Requires:	gstreamer%{gstapi}-plugins-base
 Requires:	gstreamer%{gstapi}-plugins-good
-Suggests:	gstreamer%{gstapi}-plugins-ugly
+Recommends:	gstreamer%{gstapi}-plugins-ugly
 
 %description
 Audio-recorder allows you to record your favourite music or audio to
@@ -46,15 +46,14 @@ your loudspeakers you can record it.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}
-#patch0 -p1
+%autosetup -n trunk -p1
 
 %build
-%configure2_5x
-%make
+%configure
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
 
