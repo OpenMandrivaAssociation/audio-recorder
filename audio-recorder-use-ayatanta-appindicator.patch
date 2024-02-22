@@ -1,0 +1,59 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -87,7 +87,7 @@ AC_SUBST(DBUS_LIBS)
+ # Support AppIndicator?
+ # Ref: https://launchpad.net/indicator-application
+ 
+-PKG_CHECK_MODULES(APP_INDICATOR, appindicator3-0.1 >= $APPINDICATOR_REQUIRED)
++PKG_CHECK_MODULES(APP_INDICATOR, ayatana-appindicator3-0.1 >= $APPINDICATOR_REQUIRED)
+ AC_SUBST(APP_INDICATOR_CFLAGS)
+ AC_SUBST(APP_INDICATOR_LIBS)
+ 
+--- a/src/systray-icon.c
++++ b/src/systray-icon.c
+@@ -32,7 +32,7 @@
+ #include "rec-window.h"
+ #include "rec-manager.h"
+ 
+-#include <libappindicator/app-indicator.h>
++#include <libayatana-appindicator/app-indicator.h>
+ 
+ // Note: Uncomment this to show debug messages from this module
+ //#define DEBUG_SYSTRAY
+@@ -335,7 +335,7 @@ static void systray_icon_create(gboolean
+ 
+     LOG_SYSTRAY("systray_icon_create.\n");
+ 
+-    if (IS_APP_INDICATOR(g_tray_icon)) {
++    if (APP_IS_INDICATOR(g_tray_icon)) {
+         app_indicator_set_status(APP_INDICATOR(g_tray_icon), APP_INDICATOR_STATUS_ACTIVE);
+         return;
+     }
+@@ -343,7 +343,7 @@ static void systray_icon_create(gboolean
+     g_tray_icon = (GtkWidget*)app_indicator_new("audio-recorder application",
+                   "audio-recorder-off", APP_INDICATOR_CATEGORY_APPLICATION_STATUS);
+ 
+-    g_assert(IS_APP_INDICATOR(g_tray_icon));
++    g_assert(APP_IS_INDICATOR(g_tray_icon));
+ 
+     app_indicator_set_status(APP_INDICATOR(g_tray_icon), APP_INDICATOR_STATUS_ACTIVE);
+ 
+@@ -367,7 +367,7 @@ static void systray_icon_remove() {
+     }
+     g_tray_menu = NULL;
+ 
+-    if (IS_APP_INDICATOR(g_tray_icon)) {
++    if (APP_IS_INDICATOR(g_tray_icon)) {
+ 
+         LOG_SYSTRAY("systray_icon_remove().\n");
+ 
+@@ -377,7 +377,7 @@ static void systray_icon_remove() {
+ }
+ 
+ static void systray_set_icon(gchar *icon_name) {
+-    if (!IS_APP_INDICATOR(g_tray_icon)) return;
++    if (!APP_IS_INDICATOR(g_tray_icon)) return;
+ 
+     gchar *s = g_strdup(icon_name);
+ 
+

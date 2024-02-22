@@ -4,12 +4,13 @@
 Summary:	Audio recorder for the GNOME
 Name:		audio-recorder
 Version:	3.3.4
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Sound
-Url:		https://launchpad.net/audio-recorder
+Url:		https://launchpad.net/audio-recorder/+archive/ubuntu/ppa
 #Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.xz
-Source0:  %{url}/+archive/ubuntu/ppa/+sourcefiles/audio-recorder/%{version}~%{ubuntuversion}/audio-recorder_%{version}~%{ubuntuversion}.tar.gz
+Source0:	https://launchpad.net/~audio-recorder/+archive/ubuntu/ppa/+sourcefiles/audio-recorder/%{version}~%{ubuntuversion}/audio-recorder_%{version}~%{ubuntuversion}.tar.gz
+Patch0:		audio-recorder-use-ayatanta-appindicator.patch
 BuildRequires:	intltool
 #BuildRequires:  gstpbutils1.0_0
 BuildRequires:	pkgconfig(dbus-1)
@@ -20,7 +21,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libpulse)
-BuildRequires:  pkgconfig(appindicator3-0.1)
+BuildRequires:  pkgconfig(ayatana-appindicator3-0.1)
 Requires:	gstreamer%{gstapi}-plugins-bad
 Requires:	gstreamer%{gstapi}-plugins-base
 Requires:	gstreamer%{gstapi}-plugins-good
@@ -55,5 +56,6 @@ your loudspeakers you can record it.
 %install
 %make_install
 
+# locales
 %find_lang %{name}
 
