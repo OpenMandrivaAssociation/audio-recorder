@@ -11,6 +11,11 @@ Url:		https://launchpad.net/audio-recorder/+archive/ubuntu/ppa
 #Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.xz
 Source0:	https://launchpad.net/~audio-recorder/+archive/ubuntu/ppa/+sourcefiles/audio-recorder/%{version}~%{ubuntuversion}/audio-recorder_%{version}~%{ubuntuversion}.tar.gz
 Patch0:		audio-recorder-use-ayatanta-appindicator.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 #BuildRequires:  gstpbutils1.0_0
 BuildRequires:	pkgconfig(dbus-1)
